@@ -1,7 +1,11 @@
 {% extends "bootstrap/base.html" %}
 
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
 {% block title %}
-    {% if title %}{{ title }} - Ithaca Music{% else %}Welcome to Ithaca Music{% endif %}
+    {% if title %}{{ title }} - Productive Procrastination {% else %} Productive Procrastination {% endif %}
 {% endblock %}
 
 {% block content %}

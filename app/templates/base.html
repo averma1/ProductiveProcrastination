@@ -1,0 +1,10 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+    {% if title %}{{ title }} - Ithaca Music{% else %}Welcome to Ithaca Music{% endif %}
+{% endblock %}
+
+{% block content %}
+{% block app_content %}{% endblock %}
+
+{% endblock %}

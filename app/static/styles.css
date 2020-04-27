@@ -2,6 +2,19 @@ h1 {
   color: #ff0000; }
 
 body {
-  font-size: 10px; }
+  font-size: 16px; }
 
+.nav {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -9px;
+  padding: 0;
+  background-color: #7e7e7e; }
+  .nav__title {
+    margin: 0px 30px; }
+  .nav__item {
+    display: inline-block;
+    margin: 0px 30px; }
 /*# sourceMappingURL=styles.css.map */

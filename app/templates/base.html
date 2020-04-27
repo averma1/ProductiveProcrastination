@@ -8,6 +8,16 @@
     {% if title %}{{ title }} - Productive Procrastination {% else %} Productive Procrastination {% endif %}
 {% endblock %}
 
+{% block navbar %}
+<nav class="nav">
+    <div class="nav__title">Productive Procrastination</div>
+    <ul class="nav__list">
+        <li class="nav__item">Contact Us</li>
+        <li class="nav__item">Features</li>
+    </ul>
+</nav>
+{% endblock %}
+
 {% block content %}
 {% block app_content %}{% endblock %}
 

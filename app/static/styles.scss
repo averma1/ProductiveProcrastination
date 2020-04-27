@@ -1,9 +1,26 @@
 $red: #ff0000;
-
+$navbar-background-color: #7e7e7e;
 
 h1{
     color: $red;
 }
 body{
-    font-size: 10px;
+    font-size: 16px;
+}
+// IMPORTANT
+.nav {
+	position: sticky;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: $navbar-background-color;
+	&__title {
+		margin: 0px 30px;
+	}
+	&__item {
+		display: inline-block;
+		margin: 0px 30px;
+    }
 }

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<h1>This is the Session Setup Page</h1>
+
+ <form action="/goToWorkPage" name="go-account">
+     <input type="submit" value="Let's Start This Thing Already" class="btn btn-info p-5 m-2">
+ </form>
+
+{% endblock %}

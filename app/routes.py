@@ -9,7 +9,7 @@ from app.models import User
 @app.route('/')
 @app.route('/index')
 def index():
-	return "hi :) my name is Bob this is a good day"
+	return render_template('index.html', title='Home')
 
 @app.before_request
 def before_request():
@@ -55,3 +55,30 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('index'))
     return render_template('register.html', title='Register', form=form)
+
+
+@app.route('/goToAccountPage', methods=['GET', 'POST'])
+def goToAccountPage():
+    return render_template('account.html', title='Account')
+
+@app.route('/goToHomePage', methods=['GET', 'POST'])
+def goToHomePage():
+    return render_template('index.html', title='Home')
+
+@app.route('/goToSciencePage', methods=['GET', 'POST'])
+def goToSciencePage():
+    return render_template('science.html', title='Science')
+
+
+@app.route('/goToSetupPage', methods=['GET', 'POST'])
+def goToSetupPage():
+    return render_template('setup.html', title='Setup')
+
+@app.route('/goToWorkPage', methods=['GET', 'POST'])
+def goToWorkPage():
+    return render_template('work.html', title='Work')
+
+
+@app.route('/goToBreakPage', methods=['GET', 'POST'])
+def goToBreakPage():
+    return render_template('break.html', title='Break')

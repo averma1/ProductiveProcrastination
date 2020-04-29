@@ -3,7 +3,19 @@
 
 {% block app_content %}
 
-<h1>This is the Homepage</h1>
+<h1 class="title">The Productive Procrastination Machine</h1>
+<p class="descriptions"> Are you looking for away to get that bum off the barcalounger and into a more productive routine? The productive Procrastination Machine can help you use your favorite habit, procrastinating, and turn it into a tool that rests your brain, preparing you for a productive work session. </p>
+
+<div class="container">
+</br>
+    <h4 class="descriptions"> <i> Select your interests: </i> </h4>
+    <ul class="checkboxes">
+      <li><input type="checkbox" id="checkboxOne" value="Music"><label for="checkboxOne">Music</label></li>
+      <li><input type="checkbox" id="checkboxTwo" value="Cooking"><label for="checkboxTwo">Cooking</label></li>
+      <li><input type="checkbox" id="checkboxThree" value="Sports"><label for="checkboxThree">Sports</label></li>
+      <li><input type="checkbox" id="checkboxFour" value="News"><label for="checkboxFour">News</label></li>
+    </ul>
+  </div>
 
  <form action="/goToAccountPage" name="go-account">
      <input type="submit" value="Get Started" class="btn btn-info p-5 m-2">

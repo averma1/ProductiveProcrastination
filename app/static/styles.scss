@@ -1,21 +1,29 @@
 $red: #ff0000;
-$navbar-background-color: #7e7e7e;
+$navbar-background-color: #296699;
+$navbar-font-color: #fffaf6;
+$page-background-color: rgb(255, 244, 244);
+
+@import url('https://fonts.googleapis.com/css?family=Calistoga&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Aleo&display=swap');
 
 h1{
-    color: $red;
+    color: $navbar-background-color;
 }
 body{
     font-size: 16px;
+    background-color: $page-background-color;
 }
-// IMPORTANT
+
 .nav {
 	position: sticky;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-    margin: 0;
+    margin: -10px;
     padding: 0;
+    font-family: 'Aleo', serif;
     background-color: $navbar-background-color;
+    color: $navbar-font-color;
 	&__title {
 		margin: 0px 30px;
 	}
@@ -23,4 +31,82 @@ body{
 		display: inline-block;
 		margin: 0px 30px;
     }
+}
+
+.title{
+    text-align: center;
+    font-family: 'Calistoga', cursive;
+}
+
+.descriptions{
+    text-align: center;
+    font-family: 'Aleo', serif;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.container {
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+    font-family: 'Aleo', serif;
+}
+ul.checkboxes {
+    list-style: none;
+    padding: 20px;
+}
+ul.checkboxes li{
+  display: inline;
+}
+ul.checkboxes li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(116, 164, 204, 0.795);
+    color: rgba(116, 164, 204, 0.795);
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    transition: all .2s;
+}
+
+ul.checkboxes li label {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.checkboxes li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+ul.checkboxes li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.checkboxes li input[type="checkbox"]:checked + label {
+    border: 2px solid #296699;
+    background-color: #74A4CC;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.checkboxes li input[type="checkbox"] {
+  display: absolute;
+}
+ul.checkboxes li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+ul.checkboxes li input[type="checkbox"]:focus + label {
+  border: 2px solid #CC7874;
 }

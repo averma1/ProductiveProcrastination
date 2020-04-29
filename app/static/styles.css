@@ -1,20 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Calistoga&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Aleo&display=swap");
 h1 {
-  color: #ff0000; }
+  color: #296699; }
 
 body {
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #fff4f4; }
 
 .nav {
   position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -9px;
+  margin: -10px;
   padding: 0;
-  background-color: #7e7e7e; }
+  font-family: 'Aleo', serif;
+  background-color: #296699;
+  color: #fffaf6; }
   .nav__title {
     margin: 0px 30px; }
   .nav__item {
     display: inline-block;
     margin: 0px 30px; }
+
+.title {
+  text-align: center;
+  font-family: 'Calistoga', cursive; }
+
+.descriptions {
+  text-align: center;
+  font-family: 'Aleo', serif;
+  padding-left: 20%;
+  padding-right: 20%; }
+
+.container {
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+  font-family: 'Aleo', serif; }
+
+ul.checkboxes {
+  list-style: none;
+  padding: 20px; }
+
+ul.checkboxes li {
+  display: inline; }
+
+ul.checkboxes li label {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(116, 164, 204, 0.795);
+  color: rgba(116, 164, 204, 0.795);
+  border-radius: 25px;
+  white-space: nowrap;
+  margin: 3px 0px;
+  transition: all .2s; }
+
+ul.checkboxes li label {
+  padding: 8px 12px;
+  cursor: pointer; }
+
+ul.checkboxes li label::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 2px 6px 2px 2px;
+  content: "\f067";
+  transition: transform .3s ease-in-out; }
+
+ul.checkboxes li input[type="checkbox"]:checked + label::before {
+  content: "\f00c";
+  transform: rotate(-360deg);
+  transition: transform .3s ease-in-out; }
+
+ul.checkboxes li input[type="checkbox"]:checked + label {
+  border: 2px solid #296699;
+  background-color: #74A4CC;
+  color: #fff;
+  transition: all .2s; }
+
+ul.checkboxes li input[type="checkbox"] {
+  display: absolute; }
+
+ul.checkboxes li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0; }
+
+ul.checkboxes li input[type="checkbox"]:focus + label {
+  border: 2px solid #CC7874; }
+
 /*# sourceMappingURL=styles.css.map */

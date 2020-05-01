@@ -76,6 +76,10 @@ def goToSetupPage():
 
 @app.route('/goToWorkPage', methods=['GET', 'POST'])
 def goToWorkPage():
+    total_time = request.args.get('total_time')
+    often = request.args.get('often')
+    print("THE TOTAL TIME: " + total_time)
+    print("HOW OFTEN A BREAK: " + often)
     return render_template('work.html', title='Work')
 
 

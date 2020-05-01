@@ -101,7 +101,7 @@ ul.checkboxes li input[type="checkbox"]:checked + label {
 }
 
 ul.checkboxes li input[type="checkbox"] {
-  display: absolute;
+  position: absolute;
 }
 ul.checkboxes li input[type="checkbox"] {
   position: absolute;
@@ -110,3 +110,4 @@ ul.checkboxes li input[type="checkbox"] {
 ul.checkboxes li input[type="checkbox"]:focus + label {
   border: 2px solid #CC7874;
 }
+

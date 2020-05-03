@@ -69,8 +69,9 @@ def goToWorkPage():
 @app.route('/goToBreakPage', methods=['GET', 'POST'])
 def goToBreakPage():
     loadBreaks()
-    current = chooseBreak()
-    return render_template('break.html', title='Break', content=current.content)
+    currentbr = chooseBreak()
+    current = "https://www.youtube.com/watch?v=1YAf8hFX0M0"
+    return render_template('break.html', title='Break', content=current)
 
 
 class Break:
@@ -120,4 +121,4 @@ def chooseBreak():
 
 
 def getRandNum(range):
-    return random.randrange(0, range)
+    return random.randint(0, range)

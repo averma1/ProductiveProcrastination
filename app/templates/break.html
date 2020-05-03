@@ -4,9 +4,7 @@
 {% block app_content %}
 <h1>Time to take a break!</h1>
 
-<iframe width="560" height="315" src={{breaks[0].content}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
- <iframe width="560" height="315" src=content frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+ <iframe width="560" height="315" src={{ content }} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
  <form action="/goToSetupPage" name="go-setup">
      <input type="submit" value="Edit" class="btn btn-info p-5 m-2">

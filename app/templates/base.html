@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
+{% block title %}
+    {% if title %}{{ title }} - Productive Procrastination {% else %} Productive Procrastination {% endif %}
+{% endblock %}
+
+{% block navbar %}
+
+<nav class="nav">
+    <div class="nav__title">Productive Procrastination</div>
+    <ul class="nav__list">
+        <li class="nav__item">Contact Us</li>
+        <li class="nav__item">Features</li>
+    </ul>
+</nav>
+<div style="height: 30px;"></div>
+{% endblock %}
+
+{% block content %}
+{% block app_content %}{% endblock %}
+
+{% endblock %}

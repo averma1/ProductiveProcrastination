@@ -7,22 +7,46 @@
 <p class="descriptions"> Are you looking for away to get that bum off the barcalounger and into a more productive routine? The productive Procrastination Machine can help you use your favorite habit, procrastinating, and turn it into a tool that rests your brain, preparing you for a productive work session. </p>
 
 <form action="/goToSciencePage" name="go-science">
-     <input type="submit" value="Learn More About The Science" class="btn btn-info p-5 m-2">
+     <input type="submit" value="Learn More About The Science">
  </form>
 
-<div class="container">
+
+<form action="/goToSetupPage">
+  <ul class="checkboxes">
+      <li class="interest-left">
+        <input type="checkbox" id="interest1" name="interest1" value="Music">
+        <label for="interest1">Music</label><br>
+      </li>
+      <li class="interest-right">
+        <input type="checkbox" id="interest2" name="interest2" value="Cooking">
+        <label for="interest2">Cooking</label><br>
+      </li>
+    <li class="interest-left">
+      <input type="checkbox" id="interest3" name="interest3" value="Sports">
+      <label for="interest3">Sports</label><br>
+    </li>
+    <li class="interest-right">
+      <input type="checkbox" id="interest4" name="interest4" value="News">
+      <label for="interest4">News</label><br><br>
+    </li>
+  </ul>
 </br>
-    <h4 class="descriptions"> <i> Select your interests: </i> </h4>
-    <ul class="checkboxes" id="interests">
-      <li><input type="checkbox" id="checkbox1" value="Music"><label for="checkbox1">Music</label></li>
-      <li><input type="checkbox" id="checkbox2" value="Cooking"><label for="checkbox2">Cooking</label></li>
-      <li><input type="checkbox" id="checkbox3" value="Sports"><label for="checkbox3">Sports</label></li>
-      <li><input type="checkbox" id="checkbox4" value="News"><label for="checkbox4">News</label></li>
-    </ul>
-  </div>
+  <input type="submit" value="Start Your Session">
+</form>
 
-  <form action="/goToSetupPage" name="go-setup" form="interests">
-     <input type="submit" value="Start Your Session" class="btn btn-info p-5 m-2" >
- </form>
+<!--<div class="container">-->
+<!--</br>-->
+<!--    <h4 class="descriptions"> <i> Select your interests: </i> </h4>-->
+<!--    <ul class="checkboxes" id="interests">-->
+<!--      <li><input type="checkbox" id="checkbox1" value="Music"><label for="checkbox1">Music</label></li>-->
+<!--      <li><input type="checkbox" id="checkbox2" value="Cooking"><label for="checkbox2">Cooking</label></li>-->
+<!--      <li><input type="checkbox" id="checkbox3" value="Sports"><label for="checkbox3">Sports</label></li>-->
+<!--      <li><input type="checkbox" id="checkbox4" value="News"><label for="checkbox4">News</label></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+
+<!--  <form action="/goToSetupPage" name="go-setup">-->
+<!--     <input type="submit" value="Start Your Session" class="btn btn-info p-5 m-2" form="interests">-->
+<!-- </form>-->
 
 {% endblock %}

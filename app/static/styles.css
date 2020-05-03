@@ -1,11 +1,19 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Calistoga&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Aleo&display=swap");
 h1 {
   color: #296699; }
 
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 body {
   font-size: 16px;
-  background-color: #fff4f4; }
+  background-color: #fffaf6; }
+
+.wrap {
+  margin-right: auto;
+  margin-left: auto; }
 
 .nav {
   position: sticky;
@@ -37,7 +45,8 @@ body {
   padding-left: 20%;
   padding-right: 20%;
   text-align: center;
-  font-family: 'Aleo', serif; }
+  font-family: 'Aleo', serif;
+  position: absolute; }
 
 ul.checkboxes {
   list-style: none;
@@ -49,14 +58,12 @@ ul.checkboxes li {
 ul.checkboxes li label {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.9);
-  border: 2px solid rgba(116, 164, 204, 0.795);
-  color: rgba(116, 164, 204, 0.795);
+  border: 2px solid #75a5cc;
+  color: #75a5cc;
   border-radius: 25px;
   white-space: nowrap;
   margin: 3px 0px;
-  transition: all .2s; }
-
-ul.checkboxes li label {
+  transition: all .2s;
   padding: 8px 12px;
   cursor: pointer; }
 
@@ -69,11 +76,11 @@ ul.checkboxes li label::before {
   font-weight: 900;
   font-size: 12px;
   padding: 2px 6px 2px 2px;
-  content: "\f067";
+  content: "☐";
   transition: transform .3s ease-in-out; }
 
 ul.checkboxes li input[type="checkbox"]:checked + label::before {
-  content: "\f00c";
+  content: "✓";
   transform: rotate(-360deg);
   transition: transform .3s ease-in-out; }
 
@@ -84,13 +91,40 @@ ul.checkboxes li input[type="checkbox"]:checked + label {
   transition: all .2s; }
 
 ul.checkboxes li input[type="checkbox"] {
-  display: absolute; }
-
-ul.checkboxes li input[type="checkbox"] {
   position: absolute;
   opacity: 0; }
 
 ul.checkboxes li input[type="checkbox"]:focus + label {
   border: 2px solid #CC7874; }
+
+.interest-left {
+  text-align: center;
+  font-family: 'Aleo', serif;
+  padding-left: 40%;
+  padding-right: 40%;
+  display: inline-block;
+  overflow: auto; }
+
+.interest-right {
+  text-align: center;
+  font-family: 'Aleo', serif;
+  padding-left: 55%;
+  padding-right: 55%;
+  top: -10%;
+  display: inline-block; }
+
+input[type="submit"] {
+  border-radius: 25px;
+  border: 2px solid #CC7874;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 5px;
+  font-family: 'Aleo', serif;
+  cursor: pointer;
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -2,17 +2,52 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<h1>This is the Work Page</h1>
+<h1>Your work session is in progress!</h1>
 
-
+<h2>Time left in session:</h2>
+<h1 id="demo"></h1>
 
  <form action="/goToSetupPage" name="go-setup">
-     <input type="submit" value="Edit" class="btn btn-info p-5 m-2">
+     <input type="submit" value="Edit Session" class="btn btn-info p-5 m-2">
  </form>
 
 
  <form action="/goToBreakPage" name="go-break">
      <input type="submit" value="Skip to Break" class="btn btn-info p-5 m-2">
  </form>
+
+<script>
+var seconds = 60;
+var minutes = {{values[0]}}-1;
+var interval = setInterval(setTime, 1000);
+
+  function setTime(){
+    if (minutes != 0 || seconds != 0) {
+      if (seconds == 0) {
+        seconds = 60;
+        if (minutes != 0) {
+          minutes--;
+        }
+
+      }
+      else{
+          seconds--;
+      }
+    }
+    else {
+        $.post( "/goToBreakPage", {
+                  canvas_data: JSON.stringify("hello")
+    }, function(err, req, resp){
+      window.location.href = "/goToBreakPage";
+        });
+        clearInterval(interval);
+    }
+
+    document.getElementById("demo").innerHTML = minutes+ ":" + seconds;
+
+  }
+
+
+</script>
 
 {% endblock %}

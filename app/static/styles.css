@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Calistoga&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Aleo&display=swap");
 h1 {
@@ -5,7 +6,7 @@ h1 {
 
 body {
   font-size: 16px;
-  background-color: #fff4f4; }
+  background-color: #fffaf6; }
 
 .nav {
   position: sticky;
@@ -22,6 +23,13 @@ body {
   .nav__item {
     display: inline-block;
     margin: 0px 30px; }
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px; }
 
 .title {
   text-align: center;
@@ -42,23 +50,19 @@ body {
 ul.checkboxes {
   list-style: none;
   padding: 20px; }
-
-ul.checkboxes li {
-  display: inline; }
-
-ul.checkboxes li label {
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 2px solid rgba(116, 164, 204, 0.795);
-  color: rgba(116, 164, 204, 0.795);
-  border-radius: 25px;
-  white-space: nowrap;
-  margin: 3px 0px;
-  transition: all .2s; }
-
-ul.checkboxes li label {
-  padding: 8px 12px;
-  cursor: pointer; }
+  ul.checkboxes li {
+    display: inline; }
+    ul.checkboxes li label {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 2px solid #75a5cc;
+      color: #75a5cc;
+      border-radius: 25px;
+      white-space: nowrap;
+      margin: 3px 0px;
+      transition: all .2s;
+      padding: 8px 12px;
+      cursor: pointer; }
 
 ul.checkboxes li label::before {
   display: inline-block;
@@ -69,11 +73,11 @@ ul.checkboxes li label::before {
   font-weight: 900;
   font-size: 12px;
   padding: 2px 6px 2px 2px;
-  content: "\f067";
+  content: "☐";
   transition: transform .3s ease-in-out; }
 
 ul.checkboxes li input[type="checkbox"]:checked + label::before {
-  content: "\f00c";
+  content: "✓";
   transform: rotate(-360deg);
   transition: transform .3s ease-in-out; }
 
@@ -84,7 +88,7 @@ ul.checkboxes li input[type="checkbox"]:checked + label {
   transition: all .2s; }
 
 ul.checkboxes li input[type="checkbox"] {
-  display: absolute; }
+  position: absolute; }
 
 ul.checkboxes li input[type="checkbox"] {
   position: absolute;

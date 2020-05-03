@@ -1,37 +1,47 @@
-$red: #ff0000;
-$navbar-background-color: #296699;
-$navbar-font-color: #fffaf6;
-$page-background-color: rgb(255, 244, 244);
+$dark-blue: #296699;
+$medium-blue: #74A4CC;
+$transparent-blue: #75a5cc;
+$off-white: #fffaf6;
+$white: #fff;
 
 @import url('https://fonts.googleapis.com/css?family=Calistoga&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Aleo&display=swap');
 
 h1{
-    color: $navbar-background-color;
+    color: $dark-blue;
 }
 body{
     font-size: 16px;
-    background-color: $page-background-color;
+    background-color: $off-white;
 }
 
 .nav {
-	position: sticky;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: -10px;
     padding: 0;
     font-family: 'Aleo', serif;
-    background-color: $navbar-background-color;
-    color: $navbar-font-color;
-	&__title {
-		margin: 0px 30px;
-	}
-	&__item {
-		display: inline-block;
-		margin: 0px 30px;
+    background-color: $dark-blue;
+    color: $off-white;
+    &__title {
+        margin: 0px 30px;
+    }
+    &__item {
+        display: inline-block;
+        margin: 0px 30px;
     }
 }
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
 
 .title{
     text-align: center;
@@ -54,24 +64,21 @@ body{
 ul.checkboxes {
     list-style: none;
     padding: 20px;
-}
-ul.checkboxes li{
-  display: inline;
-}
-ul.checkboxes li label{
-    display: inline-block;
-    background-color: rgba(255, 255, 255, .9);
-    border: 2px solid rgba(116, 164, 204, 0.795);
-    color: rgba(116, 164, 204, 0.795);
-    border-radius: 25px;
-    white-space: nowrap;
-    margin: 3px 0px;
-    transition: all .2s;
-}
-
-ul.checkboxes li label {
-    padding: 8px 12px;
-    cursor: pointer;
+    li{
+        display: inline;
+        label{
+            display: inline-block;
+            background-color: rgba(255, 255, 255, .9);
+            border: 2px solid $transparent-blue;
+            color: $transparent-blue;
+            border-radius: 25px;
+            white-space: nowrap;
+            margin: 3px 0px;
+            transition: all .2s;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+    }
 }
 
 ul.checkboxes li label::before {
@@ -83,31 +90,35 @@ ul.checkboxes li label::before {
     font-weight: 900;
     font-size: 12px;
     padding: 2px 6px 2px 2px;
-    content: "\f067";
+    content: "☐";
     transition: transform .3s ease-in-out;
 }
 
 ul.checkboxes li input[type="checkbox"]:checked + label::before {
-    content: "\f00c";
+    content: "✓";
     transform: rotate(-360deg);
     transition: transform .3s ease-in-out;
 }
 
 ul.checkboxes li input[type="checkbox"]:checked + label {
-    border: 2px solid #296699;
-    background-color: #74A4CC;
-    color: #fff;
+    border: 2px solid $dark-blue;
+    background-color: $medium-blue;
+    color: $white;
     transition: all .2s;
 }
 
 ul.checkboxes li input[type="checkbox"] {
-  position: absolute;
+    position: absolute;
 }
 ul.checkboxes li input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-}
-ul.checkboxes li input[type="checkbox"]:focus + label {
-  border: 2px solid #CC7874;
+    position: absolute;
+    opacity: 0;     
 }
 
+ul.checkboxes li input[type="checkbox"]:focus + label {
+    border: 2px solid #CC7874;
+}
+
+input[type="submit"]{
+
+}

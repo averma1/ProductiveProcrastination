@@ -70,7 +70,7 @@ def goToWorkPage():
 def goToBreakPage():
     loadBreaks()
     currentbr = chooseBreak()
-    current = "https://www.youtube.com/watch?v=1YAf8hFX0M0"
+    current = currentbr.content
     return render_template('break.html', title='Break', content=current)
 
 

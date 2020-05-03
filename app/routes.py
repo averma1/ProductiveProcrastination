@@ -27,9 +27,6 @@ def goToSciencePage():
     return render_template('science.html', title='Science')
 
 
-interests = []
-
-
 @app.route('/goToSetupPage', methods=['GET', 'POST'])
 def goToSetupPage():
 
@@ -53,11 +50,6 @@ def goToSetupPage():
         print(interest4)
         interests.append(interest4)
 
-def goToSetupPage(form):
-    for x in range(4):
-        name= "checkbox"+str(x+1)
-        if form.name.checked:
-            interests.append(form.name.value)
     return render_template('setup.html', title='Setup')
 
 
@@ -76,22 +68,6 @@ def goToWorkPage():
 
 @app.route('/goToBreakPage', methods=['GET', 'POST'])
 def goToBreakPage():
-    break_items = []
-    break1 = Break("cooking", "youtube", "https://www.youtube.com/embed/bIqUT78mnvg")
-    break_items.append(break1)
-    break2 = Break("cooking", "article copy", "this is content")
-    break_items.append(break2)
-    break3 = Break("cooking", "youtube", "this is content")
-    break_items.append(break3)
-    break4 = Break("cooking", "youtube", "this is content")
-    break_items.append(break4)
-    break5 = Break("cooking", "youtube", "this is content")
-    break_items.append(break5)
-    break6 = Break("cooking", "youtube", "this is content")
-    break_items.append(break6)
-    break7 = Break("cooking", "youtube", "this is content")
-    break_items.append(break7)
-    return render_template('break.html', title='Break', breaks=break_items)
     loadBreaks()
     current = chooseBreak()
     return render_template('break.html', title='Break', content=current.content)
@@ -99,6 +75,7 @@ def goToBreakPage():
 
 class Break:
     def __init__(fun, interest, type, content):
+        fun.interest = interest
         fun.type = type
         fun.content = content
 
@@ -107,13 +84,27 @@ breaks = []
 
 
 def loadBreaks():
-    thing1 = Break("music", "https://www.youtube.com/watch?v=1YAf8hFX0M0")
+    thing1 = Break("Music", "youtube", "https://www.youtube.com/watch?v=1YAf8hFX0M0")
+    break1 = Break("Cooking", "youtube", "https://www.youtube.com/embed/bIqUT78mnvg")
+    breaks.append(break1)
+    break2 = Break("Cooking", "article copy", "this is content")
+    breaks.append(break2)
+    break3 = Break("Cooking", "youtube", "this is content")
+    breaks.append(break3)
+    break4 = Break("Cooking", "youtube", "this is content")
+    breaks.append(break4)
+    break5 = Break("Cooking", "youtube", "this is content")
+    breaks.append(break5)
+    break6 = Break("Cooking", "youtube", "this is content")
+    breaks.append(break6)
+    break7 = Break("Cooking", "youtube", "this is content")
+    breaks.append(break7)
     breaks.append(thing1)
 
 
 def chooseBreak():
     if len(interests) == 0:
-        interests.append("music")
+        interests.append("Music")
     if len(interests) > 1:
         interest = getRandNum(len(interests))
     else:

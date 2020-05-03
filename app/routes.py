@@ -5,6 +5,9 @@ from werkzeug.urls import url_parse
 from app.forms import LoginForm, RegistrationForm
 from app.models import User
 
+
+interests= []
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -19,12 +22,28 @@ def goToSciencePage():
     return render_template('science.html', title='Science')
 
 @app.route('/goToSetupPage', methods=['GET', 'POST'])
-def goToSetupPage(form):
-    interests= []
-    for x in range(4):
-        name= "checkbox"+str(x+1)
-        if form.name.checked:
-            interests.append(form.name.value)
+def goToSetupPage():
+
+    interest1 = request.args.get('interest1')
+    if interest1 != None:
+        print(interest1)
+        interests.append(interest1)
+
+    interest2 = request.args.get('interest2')
+    if interest2 != None:
+        print(interest2)
+        interests.append(interest2)
+
+    interest3 = request.args.get('interest3')
+    if interest3 != None:
+        print(interest3)
+        interests.append(interest3)
+
+    interest4 = request.args.get('interest4')
+    if interest4 != None:
+        print(interest4)
+        interests.append(interest4)
+
     return render_template('setup.html', title='Setup')
 
 @app.route('/goToWorkPage', methods=['GET', 'POST'])
@@ -33,7 +52,7 @@ def goToWorkPage():
     often = request.args.get('often')
     print("THE TOTAL TIME: " + total_time)
     print("HOW OFTEN A BREAK: " + often)
-    return render_template('work.html', title='Work')
+    return render_template('work.html', title='Work', values = [total_time, often])
 
 
 @app.route('/goToBreakPage', methods=['GET', 'POST'])

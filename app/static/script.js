@@ -1,5 +1,5 @@
-var seconds = 60;
-var minutes = 10;
+// var seconds = 60;
+// var minutes = 10;
 // setInterval(setTime, 1000);
 //
 //   function setTime(){
@@ -17,4 +17,4 @@ var minutes = 10;
 //
 //   }
 
-document.getElementById("demo").innerHTML = "Hello";
+// document.getElementById("demo").innerHTML = "Hello";

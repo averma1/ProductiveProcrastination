@@ -7,6 +7,8 @@ from app.models import User
 
 
 interests= []
+totalTime = 0
+often = 0
 
 @app.route('/')
 @app.route('/index')
@@ -48,19 +50,39 @@ def goToSetupPage():
 
 @app.route('/goToWorkPage', methods=['GET', 'POST'])
 def goToWorkPage():
-    total_time = request.args.get('total_time')
-    often = request.args.get('often')
-    print("THE TOTAL TIME: " + total_time)
+    global totalTime
+    global often
+    if 'total_time' in request.args:
+        totalTime = request.args.get('total_time')
+    if 'often' in request.args:
+        often = request.args.get('often')
+    print("THE TOTAL TIME: " + totalTime)
     print("HOW OFTEN A BREAK: " + often)
-    return render_template('work.html', title='Work', values = [total_time, often])
+    return render_template('work.html', title='Work', values = [totalTime, often])
 
 
 @app.route('/goToBreakPage', methods=['GET', 'POST'])
 def goToBreakPage():
-    return render_template('break.html', title='Break')
+    break_items = []
+    break1 = Break("cooking", "youtube", "https://www.youtube.com/embed/bIqUT78mnvg")
+    break_items.append(break1)
+    break2 = Break("cooking", "article copy", "this is content")
+    break_items.append(break2)
+    break3 = Break("cooking", "youtube", "this is content")
+    break_items.append(break3)
+    break4 = Break("cooking", "youtube", "this is content")
+    break_items.append(break4)
+    break5 = Break("cooking", "youtube", "this is content")
+    break_items.append(break5)
+    break6 = Break("cooking", "youtube", "this is content")
+    break_items.append(break6)
+    break7 = Break("cooking", "youtube", "this is content")
+    break_items.append(break7)
+    return render_template('break.html', title='Break', breaks=break_items)
 
 class Break:
-    def __init__(fun, type, content):
+    def __init__(fun, interest, type, content):
+        fun.interest = interest
         fun.type = type
         fun.content = content
 

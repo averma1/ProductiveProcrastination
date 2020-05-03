@@ -12,11 +12,18 @@ $bright-orange: #FF876B;
 h1{
     color: $dark-blue;
 }
+*, *:before, *:after {
+    box-sizing: inherit; 
+}
 body{
     font-size: 16px;
     background-color: $off-white;
 }
-
+.wrap{
+    margin-right: auto;
+    margin-left: auto;
+}
+//NAVBAR
 .nav {
     position: sticky;
     display: flex;
@@ -35,28 +42,18 @@ body{
         margin: 0px 30px;
     }
 }
-
-.parent {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-}
-
-
+//TITLE
 .title{
     text-align: center;
     font-family: 'Calistoga', cursive;
 }
-
+//DESCRIPTION
 .descriptions{
     text-align: center;
     font-family: 'Aleo', serif;
     padding-left: 20%;
     padding-right: 20%;
 }
-
 .container {
     padding-left: 20%;
     padding-right: 20%;
@@ -64,11 +61,11 @@ body{
     font-family: 'Aleo', serif;
     position: absolute;
 }
+//CHECBOXES
 ul.checkboxes {
     list-style: none;
     padding: 20px;
 }
-
 ul.checkboxes li{
     display: inline;
 }
@@ -84,7 +81,6 @@ ul.checkboxes li label{
     padding: 8px 12px;
     cursor: pointer;
 }
-
 ul.checkboxes li label::before {
     display: inline-block;
     font-style: normal;
@@ -97,29 +93,43 @@ ul.checkboxes li label::before {
     content: "☐";
     transition: transform .3s ease-in-out;
 }
-
 ul.checkboxes li input[type="checkbox"]:checked + label::before {
     content: "✓";
     transform: rotate(-360deg);
     transition: transform .3s ease-in-out;
 }
-
 ul.checkboxes li input[type="checkbox"]:checked + label {
     border: 2px solid $dark-blue;
     background-color: $medium-blue;
     color: $white;
     transition: all .2s;
 }
-
 ul.checkboxes li input[type="checkbox"] {
     position: absolute;
     opacity: 0;     
 }
-
 ul.checkboxes li input[type="checkbox"]:focus + label {
     border: 2px solid $soft-orange;
 }
 
+.interest-left{
+    text-align: center;
+    font-family: 'Aleo', serif;
+    padding-left: 40%;
+    padding-right: 40%;
+    display: inline-block;
+    overflow: auto;
+}
+
+.interest-right{
+    text-align: center;
+    font-family: 'Aleo', serif;
+    padding-left: 55%;
+    padding-right: 55%;
+    top: -10%;
+    display: inline-block;
+}
+//SUBMIT BUTTONS
 input[type="submit"]{
     border-radius: 25px;
     border: 2px solid $soft-orange;
@@ -132,4 +142,5 @@ input[type="submit"]{
     padding: 5px;
     font-family: 'Aleo', serif;
     cursor: pointer;
+    text-align: center;
 }

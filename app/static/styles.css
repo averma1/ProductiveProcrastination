@@ -4,9 +4,16 @@
 h1 {
   color: #296699; }
 
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 body {
   font-size: 16px;
   background-color: #fffaf6; }
+
+.wrap {
+  margin-right: auto;
+  margin-left: auto; }
 
 .nav {
   position: sticky;
@@ -23,13 +30,6 @@ body {
   .nav__item {
     display: inline-block;
     margin: 0px 30px; }
-
-.parent {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 5px;
-  grid-row-gap: 5px; }
 
 .title {
   text-align: center;
@@ -97,6 +97,22 @@ ul.checkboxes li input[type="checkbox"] {
 ul.checkboxes li input[type="checkbox"]:focus + label {
   border: 2px solid #CC7874; }
 
+.interest-left {
+  text-align: center;
+  font-family: 'Aleo', serif;
+  padding-left: 40%;
+  padding-right: 40%;
+  display: inline-block;
+  overflow: auto; }
+
+.interest-right {
+  text-align: center;
+  font-family: 'Aleo', serif;
+  padding-left: 55%;
+  padding-right: 55%;
+  top: -10%;
+  display: inline-block; }
+
 input[type="submit"] {
   border-radius: 25px;
   border: 2px solid #CC7874;
@@ -108,6 +124,7 @@ input[type="submit"] {
   font-size: 12px;
   padding: 5px;
   font-family: 'Aleo', serif;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */

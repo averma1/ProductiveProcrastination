@@ -113,8 +113,8 @@ def chooseBreak():
     strInterest= interests[interest]
     possible= []
     for x in breaks:
-        if breaks[x].type == strInterest:
-            possible.append(breaks[x])
+        if x.interest == strInterest:
+            possible.append(x)
 
     theBreak= possible[getRandNum(len(possible))]
     return theBreak

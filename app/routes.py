@@ -1,4 +1,4 @@
-from random import random
+from random import*
 
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
@@ -85,7 +85,7 @@ breaks = []
 
 
 def loadBreaks():
-    thing1 = Break("Music", "youtube", "https://www.youtube.com/watch?v=1YAf8hFX0M0")
+    thing1 = Break("Music", "youtube", "https://www.youtube.com/embed/1YAf8hFX0M0")
     break1 = Break("Cooking", "youtube", "https://www.youtube.com/embed/bIqUT78mnvg")
     breaks.append(break1)
     break2 = Break("Cooking", "article copy", "this is content")
@@ -121,4 +121,4 @@ def chooseBreak():
 
 
 def getRandNum(range):
-    return random.randint(0, range)
+    return int(random()*range)

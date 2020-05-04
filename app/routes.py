@@ -1,4 +1,4 @@
-from random import random
+from random import*
 
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
@@ -70,8 +70,16 @@ def goToWorkPage():
 def goToBreakPage():
     loadBreaks()
     currentbr = chooseBreak()
-    current = currentbr.content
-    return render_template('break.html', title='Break', content=current)
+    if currentbr.type == "youtube":
+        current = currentbr.content[0]
+        return render_template('videoBreak.html', title='Break', content=current)
+    elif currentbr.type == "combo":
+        cont1 = currentbr.content[0]
+        cont2 = currentbr.content[1]
+        return render_template('comboBreak.html', title='Break', content1=cont1, content2=cont2)
+    else:
+        current = currentbr.content[0]
+        return render_template('textBreak.html', title='Break', content=current)
 
 
 class Break:
@@ -85,20 +93,20 @@ breaks = []
 
 
 def loadBreaks():
-    thing1 = Break("Music", "youtube", "https://www.youtube.com/watch?v=1YAf8hFX0M0")
-    break1 = Break("Cooking", "youtube", "https://www.youtube.com/embed/bIqUT78mnvg")
+    thing1 = Break("Music", "youtube", ["https://www.youtube.com/embed/1YAf8hFX0M0"])
+    break1 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/bIqUT78mnvg"])
     breaks.append(break1)
-    break2 = Break("Cooking", "article copy", "this is content")
+    break2 = Break("Cooking", "article", ["this is content"])
     breaks.append(break2)
-    break3 = Break("Cooking", "youtube", "this is content")
+    break3 = Break("Cooking", "article", ["this is content"])
     breaks.append(break3)
-    break4 = Break("Cooking", "youtube", "this is content")
+    break4 = Break("Cooking", "article", ["this is content"])
     breaks.append(break4)
-    break5 = Break("Cooking", "youtube", "this is content")
+    break5 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/CE3OutlMcfM"])
     breaks.append(break5)
-    break6 = Break("Cooking", "youtube", "this is content")
+    break6 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/-7i9dTJgsdI"])
     breaks.append(break6)
-    break7 = Break("Cooking", "youtube", "this is content")
+    break7 = Break("Cooking", "combo", ["https://www.youtube.com/embed/NN-bLP2B8f4", "this is content"])
     breaks.append(break7)
     breaks.append(thing1)
 
@@ -121,4 +129,4 @@ def chooseBreak():
 
 
 def getRandNum(range):
-    return random.randint(0, range)
+    return int(random()*range)

@@ -71,10 +71,14 @@ def goToBreakPage():
     loadBreaks()
     currentbr = chooseBreak()
     if currentbr.type == "youtube":
-        current = currentbr.content
+        current = currentbr.content[0]
         return render_template('videoBreak.html', title='Break', content=current)
+    elif currentbr.type == "combo":
+        cont1 = currentbr.content[0]
+        cont2 = currentbr.content[1]
+        return render_template('comboBreak.html', title='Break', content1=cont1, content2=cont2)
     else:
-        current = currentbr.content
+        current = currentbr.content[0]
         return render_template('textBreak.html', title='Break', content=current)
 
 
@@ -89,20 +93,20 @@ breaks = []
 
 
 def loadBreaks():
-    thing1 = Break("Music", "youtube", "https://www.youtube.com/embed/1YAf8hFX0M0")
-    break1 = Break("Cooking", "youtube", "https://www.youtube.com/embed/bIqUT78mnvg")
+    thing1 = Break("Music", "youtube", ["https://www.youtube.com/embed/1YAf8hFX0M0"])
+    break1 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/bIqUT78mnvg"])
     breaks.append(break1)
-    break2 = Break("Cooking", "article", "this is content")
+    break2 = Break("Cooking", "article", ["this is content"])
     breaks.append(break2)
-    break3 = Break("Cooking", "article", "this is content")
+    break3 = Break("Cooking", "article", ["this is content"])
     breaks.append(break3)
-    break4 = Break("Cooking", "article", "this is content")
+    break4 = Break("Cooking", "article", ["this is content"])
     breaks.append(break4)
-    break5 = Break("Cooking", "youtube", "https://www.youtube.com/embed/CE3OutlMcfM")
+    break5 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/CE3OutlMcfM"])
     breaks.append(break5)
-    break6 = Break("Cooking", "youtube", "https://www.youtube.com/embed/-7i9dTJgsdI")
+    break6 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/-7i9dTJgsdI"])
     breaks.append(break6)
-    break7 = Break("Cooking", "youtube", "https://www.youtube.com/embed/NN-bLP2B8f4")
+    break7 = Break("Cooking", "combo", ["https://www.youtube.com/embed/NN-bLP2B8f4", "this is content"])
     breaks.append(break7)
     breaks.append(thing1)
 

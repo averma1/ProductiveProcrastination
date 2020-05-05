@@ -4,11 +4,9 @@
 {% block app_content %}
 <h1>Time to take a break!</h1>
 
-<iframe width="560" height="315" src={{breaks[0].content}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-  <form action="/goToAccountPage" name="go-account">
-     <input type="submit" value="Exit" class="btn btn-info p-5 m-2">
- </form>
+<iframe width="560" height="315" src={{ content1 }} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br>
+ {{ content2 }}
 
  <form action="/goToSetupPage" name="go-setup">
      <input type="submit" value="Edit" class="btn btn-info p-5 m-2">
@@ -17,6 +15,10 @@
 
  <form action="/goToWorkPage" name="go-setup">
      <input type="submit" value="Go Back to Work" class="btn btn-info p-5 m-2">
+ </form>
+
+<form action="/goToBreakPage" name="go-break">
+     <input type="submit" value="Give Me Something Else" class="btn btn-info p-5 m-2">
  </form>
 
 

@@ -1,9 +1,10 @@
+from random import*
+
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
 from datetime import datetime
 from werkzeug.urls import url_parse
-from app.forms import LoginForm, RegistrationForm
-from app.models import User
+
 
 
 interests= []
@@ -13,15 +14,18 @@ often = 0
 @app.route('/')
 @app.route('/index')
 def index():
-	return render_template('index.html', title='Home')
+    return render_template('index.html', title='Home')
+
 
 @app.route('/goToHomePage', methods=['GET', 'POST'])
 def goToHomePage():
     return render_template('index.html', title='Home')
 
+
 @app.route('/goToSciencePage', methods=['GET', 'POST'])
 def goToSciencePage():
     return render_template('science.html', title='Science')
+
 
 @app.route('/goToSetupPage', methods=['GET', 'POST'])
 def goToSetupPage():
@@ -48,6 +52,7 @@ def goToSetupPage():
 
     return render_template('setup.html', title='Setup')
 
+
 @app.route('/goToWorkPage', methods=['GET', 'POST'])
 def goToWorkPage():
     global totalTime
@@ -63,22 +68,19 @@ def goToWorkPage():
 
 @app.route('/goToBreakPage', methods=['GET', 'POST'])
 def goToBreakPage():
-    break_items = []
-    break1 = Break("cooking", "youtube", "https://www.youtube.com/embed/bIqUT78mnvg")
-    break_items.append(break1)
-    break2 = Break("cooking", "article copy", "this is content")
-    break_items.append(break2)
-    break3 = Break("cooking", "youtube", "this is content")
-    break_items.append(break3)
-    break4 = Break("cooking", "youtube", "this is content")
-    break_items.append(break4)
-    break5 = Break("cooking", "youtube", "this is content")
-    break_items.append(break5)
-    break6 = Break("cooking", "youtube", "this is content")
-    break_items.append(break6)
-    break7 = Break("cooking", "youtube", "this is content")
-    break_items.append(break7)
-    return render_template('break.html', title='Break', breaks=break_items)
+    loadBreaks()
+    currentbr = chooseBreak()
+    if currentbr.type == "youtube":
+        current = currentbr.content[0]
+        return render_template('videoBreak.html', title='Break', content=current)
+    elif currentbr.type == "combo":
+        cont1 = currentbr.content[0]
+        cont2 = currentbr.content[1]
+        return render_template('comboBreak.html', title='Break', content1=cont1, content2=cont2)
+    else:
+        current = currentbr.content[0]
+        return render_template('textBreak.html', title='Break', content=current)
+
 
 class Break:
     def __init__(fun, interest, type, content):
@@ -86,3 +88,45 @@ class Break:
         fun.type = type
         fun.content = content
 
+
+breaks = []
+
+
+def loadBreaks():
+    thing1 = Break("Music", "youtube", ["https://www.youtube.com/embed/1YAf8hFX0M0"])
+    break1 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/bIqUT78mnvg"])
+    breaks.append(break1)
+    break2 = Break("Cooking", "article", ["this is content"])
+    breaks.append(break2)
+    break3 = Break("Cooking", "article", ["this is content"])
+    breaks.append(break3)
+    break4 = Break("Cooking", "article", ["this is content"])
+    breaks.append(break4)
+    break5 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/CE3OutlMcfM"])
+    breaks.append(break5)
+    break6 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/-7i9dTJgsdI"])
+    breaks.append(break6)
+    break7 = Break("Cooking", "combo", ["https://www.youtube.com/embed/NN-bLP2B8f4", "this is content"])
+    breaks.append(break7)
+    breaks.append(thing1)
+
+
+def chooseBreak():
+    if len(interests) == 0:
+        interests.append("Music")
+    if len(interests) > 1:
+        interest = getRandNum(len(interests))
+    else:
+        interest = 0
+    strInterest= interests[interest]
+    possible= []
+    for x in breaks:
+        if x.interest == strInterest:
+            possible.append(x)
+
+    theBreak= possible[getRandNum(len(possible))]
+    return theBreak
+
+
+def getRandNum(range):
+    return int(random()*range)

@@ -16,6 +16,9 @@ often = 0
 def index():
     return render_template('index.html', title='Home')
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', title='About Us')
 
 @app.route('/goToHomePage', methods=['GET', 'POST'])
 def goToHomePage():
@@ -25,6 +28,7 @@ def goToHomePage():
 @app.route('/goToSciencePage', methods=['GET', 'POST'])
 def goToSciencePage():
     return render_template('science.html', title='Science')
+
 
 
 @app.route('/goToSetupPage', methods=['GET', 'POST'])

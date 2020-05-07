@@ -132,8 +132,8 @@ ul.checkboxes li input[type="checkbox"]:focus + label {
 .interest-left{
     text-align: center;
     font-family: 'Aleo', serif;
-    padding-left: 400px;
-    padding-right: 400px;
+    padding-left: 700px;
+    padding-right: 700px;
     display: inline-block;
     overflow: auto;
 }
@@ -141,9 +141,8 @@ ul.checkboxes li input[type="checkbox"]:focus + label {
 .interest-right{
     text-align: center;
     font-family: 'Aleo', serif;
-    padding-left: 400px;
-    padding-right: 400px;
-    top: -10px;
+    padding-left: 700px;
+    padding-right: 700px;
     display: inline-block;
 }
 //SUBMIT BUTTONS
@@ -155,11 +154,34 @@ input[type="submit"]{
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font-weight: 900;
-    font-size: 12px;
+    font-size: 20px;
     padding: 5px;
     font-family: 'Aleo', serif;
     cursor: pointer;
     text-align: center;
+    margin-left: 620px;
+    margin-right: 620px;
+}
+.bottom-submit{
+    border-radius: 25px;
+    border: 2px solid $soft-orange;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Aleo', serif;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 650px;
+    margin-right: 620px;
+}
+
+.form-text{
+    text-align: center;
+    font-family: 'Aleo', serif;
 }
 
 //Science Pg

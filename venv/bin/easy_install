@@ -1,4 +1,6 @@
-#!/Users/averma/ppn/venv/bin/python3
+#!/bin/sh
+'''exec' "/Users/eliakrings/Desktop/HCI Final/ProductiveProcrastination/venv/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys

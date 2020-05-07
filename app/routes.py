@@ -26,7 +26,10 @@ def goToHomePage():
 def goToSciencePage():
     return render_template('science.html', title='Science')
 
-
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', title='Contact Us')
+    
 @app.route('/goToSetupPage', methods=['GET', 'POST'])
 def goToSetupPage():
 

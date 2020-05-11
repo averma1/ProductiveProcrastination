@@ -5,11 +5,10 @@ from flask import render_template, flash, redirect, url_for, request
 from datetime import datetime
 from werkzeug.urls import url_parse
 
-
-
-interests= []
+interests = []
 totalTime = 0
 often = 0
+
 
 @app.route('/')
 @app.route('/index')
@@ -63,7 +62,7 @@ def goToWorkPage():
         often = request.args.get('often')
     print("THE TOTAL TIME: " + totalTime)
     print("HOW OFTEN A BREAK: " + often)
-    return render_template('work.html', title='Work', values = [totalTime, often])
+    return render_template('work.html', title='Work', values=[totalTime, often])
 
 
 @app.route('/goToBreakPage', methods=['GET', 'POST'])
@@ -72,15 +71,32 @@ def goToBreakPage():
     currentbr = chooseBreak()
     if currentbr.type == "youtube":
         current = currentbr.content[0]
-        return render_template('videoBreak.html', title='Break', content=current)
+        return render_template('videoBreak.html', title='Break', content=current, values=[19, 60])
     elif currentbr.type == "combo":
         cont1 = currentbr.content[0]
         cont2 = currentbr.content[1]
-        return render_template('comboBreak.html', title='Break', content1=cont1, content2=cont2)
+        return render_template('comboBreak.html', title='Break', content1=cont1, content2=cont2, values=[19, 60])
     else:
         current = currentbr.content[0]
-        return render_template('textBreak.html', title='Break', content=current)
+        return render_template('textBreak.html', title='Break', content=current, values=[19, 60])
 
+
+@app.route('/refreshBreakPage', methods=['GET', 'POST'])
+def refreshBreakPage():
+    min = request.args.get('minutes2')
+    sec = request.args.get('seconds2')
+    loadBreaks()
+    currentbr = chooseBreak()
+    if currentbr.type == "youtube":
+        current = currentbr.content[0]
+        return render_template('videoBreak.html', title='Break', content=current, values=[min, sec])
+    elif currentbr.type == "combo":
+        cont1 = currentbr.content[0]
+        cont2 = currentbr.content[1]
+        return render_template('comboBreak.html', title='Break', content1=cont1, content2=cont2, values=[min, sec])
+    else:
+        current = currentbr.content[0]
+        return render_template('textBreak.html', title='Break', content=current, values=[min, sec])
 
 class Break:
     def __init__(fun, interest, type, content):

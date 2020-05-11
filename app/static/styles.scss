@@ -12,6 +12,14 @@ $bright-orange: #FF876B;
 h1{
     color: $dark-blue;
 }
+h2{
+    color: $medium-blue;
+}
+h4{
+    color: $soft-orange;
+    padding-left: 20%;
+    padding-right: 20%;
+}
 *, *:before, *:after {
     box-sizing: inherit; 
 }
@@ -31,7 +39,7 @@ body{
     align-items: center;
     margin: -10px;
     padding: 0;
-    font-family: 'Aleo', serif;
+    font-family: 'Calistoga', cursive;
     background-color: $dark-blue;
     color: $off-white;
     &__title {
@@ -42,10 +50,19 @@ body{
         margin: 0px 30px;
     }
 }
+
+.homeLogo{
+    font-size: 24px;
+    color: $bright-orange;
+}
+
+
+
 //TITLE
 .title{
     text-align: center;
     font-family: 'Calistoga', cursive;
+    
 }
 //DESCRIPTION
 .descriptions{
@@ -115,8 +132,8 @@ ul.checkboxes li input[type="checkbox"]:focus + label {
 .interest-left{
     text-align: center;
     font-family: 'Aleo', serif;
-    padding-left: 40%;
-    padding-right: 40%;
+    padding-left: 700px;
+    padding-right: 700px;
     display: inline-block;
     overflow: auto;
 }
@@ -124,9 +141,8 @@ ul.checkboxes li input[type="checkbox"]:focus + label {
 .interest-right{
     text-align: center;
     font-family: 'Aleo', serif;
-    padding-left: 55%;
-    padding-right: 55%;
-    top: -10%;
+    padding-left: 700px;
+    padding-right: 700px;
     display: inline-block;
 }
 //SUBMIT BUTTONS
@@ -138,9 +154,69 @@ input[type="submit"]{
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font-weight: 900;
-    font-size: 12px;
+    font-size: 20px;
     padding: 5px;
     font-family: 'Aleo', serif;
     cursor: pointer;
     text-align: center;
+    margin-left: 620px;
+    margin-right: 620px;
 }
+.bottom-submit{
+    border-radius: 25px;
+    border: 2px solid $soft-orange;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Aleo', serif;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 650px;
+    margin-right: 620px;
+}
+
+.form-text{
+    text-align: center;
+    font-family: 'Aleo', serif;
+}
+
+//Science Pg
+.leftBox {
+    position: absolute;
+    left: 400px;
+    width: 200px;
+    border: 5px solid $bright-orange;
+    border-radius: 25px;
+    padding: 10px;
+    
+  }
+
+  .rightTopSection{
+    position: absolute;
+    right: 20px;
+    width: 500px;
+  }
+
+  .rightBox{
+    position: absolute;
+    right: 200px;
+    width: 415px;
+    border: 5px solid $bright-orange;
+    border-radius: 25px;
+    padding: 10px;
+  }
+
+  .leftTopSection{
+    position: absolute;
+    width: 500px;
+    padding-right: 25px;
+  }
+
+  img{
+      width: 400px;
+      border-radius: 25px;
+  }

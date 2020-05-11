@@ -4,6 +4,14 @@
 h1 {
   color: #296699; }
 
+h2 {
+  color: #74A4CC; }
+
+h4 {
+  color: #CC7874;
+  padding-left: 20%;
+  padding-right: 20%; }
+
 *, *:before, *:after {
   box-sizing: inherit; }
 
@@ -22,7 +30,7 @@ body {
   align-items: center;
   margin: -10px;
   padding: 0;
-  font-family: 'Aleo', serif;
+  font-family: 'Calistoga', cursive;
   background-color: #296699;
   color: #fffaf6; }
   .nav__title {
@@ -30,6 +38,10 @@ body {
   .nav__item {
     display: inline-block;
     margin: 0px 30px; }
+
+.homeLogo {
+  font-size: 24px;
+  color: #FF876B; }
 
 .title {
   text-align: center;
@@ -100,17 +112,16 @@ ul.checkboxes li input[type="checkbox"]:focus + label {
 .interest-left {
   text-align: center;
   font-family: 'Aleo', serif;
-  padding-left: 40%;
-  padding-right: 40%;
+  padding-left: 700px;
+  padding-right: 700px;
   display: inline-block;
   overflow: auto; }
 
 .interest-right {
   text-align: center;
   font-family: 'Aleo', serif;
-  padding-left: 55%;
-  padding-right: 55%;
-  top: -10%;
+  padding-left: 700px;
+  padding-right: 700px;
   display: inline-block; }
 
 input[type="submit"] {
@@ -121,10 +132,62 @@ input[type="submit"] {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-weight: 900;
-  font-size: 12px;
+  font-size: 20px;
   padding: 5px;
   font-family: 'Aleo', serif;
   cursor: pointer;
-  text-align: center; }
+  text-align: center;
+  margin-left: 620px;
+  margin-right: 620px; }
+
+.bottom-submit {
+  border-radius: 25px;
+  border: 2px solid #CC7874;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 5px;
+  font-family: 'Aleo', serif;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 650px;
+  margin-right: 620px; }
+
+.form-text {
+  text-align: center;
+  font-family: 'Aleo', serif; }
+
+.leftBox {
+  position: absolute;
+  left: 400px;
+  width: 200px;
+  border: 5px solid #FF876B;
+  border-radius: 25px;
+  padding: 10px; }
+
+.rightTopSection {
+  position: absolute;
+  right: 20px;
+  width: 500px; }
+
+.rightBox {
+  position: absolute;
+  right: 200px;
+  width: 415px;
+  border: 5px solid #FF876B;
+  border-radius: 25px;
+  padding: 10px; }
+
+.leftTopSection {
+  position: absolute;
+  width: 500px;
+  padding-right: 25px; }
+
+img {
+  width: 400px;
+  border-radius: 25px; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -85,8 +85,8 @@ def goToBreakPage():
 
 @app.route('/refreshBreakPage', methods=['GET', 'POST'])
 def refreshBreakPage():
-    min = request.args.get('minutes2')
-    sec = request.args.get('seconds2')
+    min = request.args.get('min2')
+    sec = request.args.get('sec2')
     loadBreaks()
     currentbr = chooseBreak()
     if currentbr.type == "youtube":

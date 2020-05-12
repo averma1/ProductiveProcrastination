@@ -2,27 +2,31 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<h1>Time to take a break!</h1>
+<h1 class="title">Time to take a break!</h1>
 
-<h2>Time left in break:</h2>
-<h1><span id="minutes" ></span>:<span id="seconds" ></span></h1>
+<div class="descriptions">
+    <h2>Time left in break:</h2>
+    <h1><span id="minutes" ></span>:<span id="seconds" ></span></h1>
+</div>
 
- <iframe width="560" height="315" src={{ content }} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="title">
+     <iframe width="560" height="315" src={{ content }} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
- <form action="/goToSetupPage" name="go-setup">
-     <input type="submit" value="Edit" class="btn btn-info p-5 m-2">
- </form>
-
-
- <form action="/goToWorkPage" name="go-setup">
-     <input type="submit" value="Go Back to Work" class="btn btn-info p-5 m-2">
- </form>
-
-<form action="/refreshBreakPage" name="go-break">
+    <form action="/refreshBreakPage" name="go-break">
      <input type="submit" value="Give Me Something Else" class="btn btn-info p-5 m-2">
-    <input type="submit" id="minutes2" class="Hidden">
-    <input type="submit" id="seconds2" class="Hidden">
- </form>
+    <input type="text" id="min2" name="min2" value="8" hidden>
+     <input type="text" id="sec2" name="sec2" value="50" hidden>
+    </form>
+
+     <form action="/goToSetupPage" name="go-setup">
+         <input type="submit" value="Edit" class="btn btn-info p-5 m-2">
+     </form>
+
+     <form action="/goToWorkPage" name="go-setup">
+         <input type="submit" value="Go Back to Work" class="btn btn-info p-5 m-2">
+     </form>
+
+</div>
 
 <script>
 var seconds = {{values[1]}};
@@ -45,8 +49,8 @@ var interval = setInterval(setTime, 1000);
 
     document.getElementById("minutes").innerHTML = minutes;
     document.getElementById("seconds").innerHTML = seconds;
-    document.getElementById("minutes2").value = minutes;
-    document.getElementById("seconds2").value = seconds;
+    document.getElementById("min2").value = minutes;
+    document.getElementById("sec2").value = seconds;
 
   }
 

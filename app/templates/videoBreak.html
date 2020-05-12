@@ -4,6 +4,9 @@
 {% block app_content %}
 <h1>Time to take a break!</h1>
 
+<h2>Time left in break:</h2>
+<h1><span id="minutes" ></span>:<span id="seconds" ></span></h1>
+
  <iframe width="560" height="315" src={{ content }} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
  <form action="/goToSetupPage" name="go-setup">
@@ -15,10 +18,39 @@
      <input type="submit" value="Go Back to Work" class="btn btn-info p-5 m-2">
  </form>
 
-<form action="/goToBreakPage" name="go-break">
+<form action="/refreshBreakPage" name="go-break">
      <input type="submit" value="Give Me Something Else" class="btn btn-info p-5 m-2">
+    <input type="submit" id="minutes2" class="Hidden">
+    <input type="submit" id="seconds2" class="Hidden">
  </form>
 
+<script>
+var seconds = {{values[1]}};
+var minutes = {{values[0]}};
+var interval = setInterval(setTime, 1000);
 
+  function setTime(){
+    if (minutes != 0 || seconds != 0) {
+      if (seconds == 0) {
+        seconds = 60;
+        if (minutes != 0) {
+          minutes--;
+        }
+
+      }
+      else{
+          seconds--;
+      }
+    }
+
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("minutes2").value = minutes;
+    document.getElementById("seconds2").value = seconds;
+
+  }
+
+
+</script>
 
 {% endblock %}

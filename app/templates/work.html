@@ -17,18 +17,26 @@
  </form>
 
 <script>
-var seconds = 60;
-var minutes = {{values[0]}}-1;
+var seconds = 0;
+var minutes = 0;
 var interval = setInterval(setTime, 1000);
+var hours = {{values[0]}};
+var minPlaceholder = "";
+var secPlaceholder = "";
 
   function setTime(){
-    if (minutes != 0 || seconds != 0) {
+    if (minutes != 0 || seconds != 0 || hours != 0) {
       if (seconds == 0) {
         seconds = 60;
-        if (minutes != 0) {
-          minutes--;
+        if (minutes == 0){
+            minutes = 59;
+            if (hours != 0){
+                hours--;
+            }
         }
-
+        else{
+            minutes--;
+        }
       }
       else{
           seconds--;
@@ -43,7 +51,21 @@ var interval = setInterval(setTime, 1000);
         clearInterval(interval);
     }
 
-    document.getElementById("demo").innerHTML = minutes+ ":" + seconds;
+    if (minutes <10){
+        minPlaceholder = "0";
+    }
+    else{
+        minPlaceholder = "";
+    }
+
+    if (seconds <10){
+        secPlaceholder = "0";
+    }
+    else{
+        secPlaceholder = "";
+    }
+
+    document.getElementById("demo").innerHTML = hours + ":" + minPlaceholder + minutes+":" + secPlaceholder + seconds;
 
   }
 

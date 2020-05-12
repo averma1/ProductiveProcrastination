@@ -2,26 +2,32 @@
 @import url("https://fonts.googleapis.com/css?family=Calistoga&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Aleo&display=swap");
 h1 {
-  color: #296699; }
+  color: #296699;
+}
 
 h2 {
-  color: #74A4CC; }
+  color: #74A4CC;
+}
 
 h4 {
   color: #CC7874;
   padding-left: 20%;
-  padding-right: 20%; }
+  padding-right: 20%;
+}
 
 *, *:before, *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 body {
   font-size: 16px;
-  background-color: #fffaf6; }
+  background-color: #fffaf6;
+}
 
 .wrap {
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+}
 
 .nav {
   position: sticky;
@@ -30,42 +36,51 @@ body {
   align-items: center;
   margin: -10px;
   padding: 0;
-  font-family: 'Calistoga', cursive;
+  font-family: "Calistoga", cursive;
   background-color: #296699;
-  color: #fffaf6; }
-  .nav__title {
-    margin: 0px 30px; }
-  .nav__item {
-    display: inline-block;
-    margin: 0px 30px; }
+  color: #fffaf6;
+}
+.nav__title {
+  margin: 0px 30px;
+}
+.nav__item {
+  display: inline-block;
+  margin: 0px 30px;
+}
 
 .homeLogo {
   font-size: 24px;
-  color: #FF876B; }
+  color: #FF876B;
+}
 
 .title {
   text-align: center;
-  font-family: 'Calistoga', cursive; }
+  font-family: "Calistoga", cursive;
+}
 
 .descriptions {
   text-align: center;
-  font-family: 'Aleo', serif;
+  font-family: "Aleo", serif;
   padding-left: 20%;
-  padding-right: 20%; }
+  padding-right: 20%;
+}
 
 .container {
   padding-left: 20%;
   padding-right: 20%;
   text-align: center;
-  font-family: 'Aleo', serif;
-  position: absolute; }
+  font-family: "Aleo", serif;
+  position: absolute;
+}
 
 ul.checkboxes {
   list-style: none;
-  padding: 20px; }
+  padding: 20px;
+}
 
 ul.checkboxes li {
-  display: inline; }
+  display: inline;
+}
 
 ul.checkboxes li label {
   display: inline-block;
@@ -75,9 +90,10 @@ ul.checkboxes li label {
   border-radius: 25px;
   white-space: nowrap;
   margin: 3px 0px;
-  transition: all .2s;
+  transition: all 0.2s;
   padding: 8px 12px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 ul.checkboxes li label::before {
   display: inline-block;
@@ -89,42 +105,49 @@ ul.checkboxes li label::before {
   font-size: 12px;
   padding: 2px 6px 2px 2px;
   content: "☐";
-  transition: transform .3s ease-in-out; }
+  transition: transform 0.3s ease-in-out;
+}
 
-ul.checkboxes li input[type="checkbox"]:checked + label::before {
+ul.checkboxes li input[type=checkbox]:checked + label::before {
   content: "✓";
   transform: rotate(-360deg);
-  transition: transform .3s ease-in-out; }
+  transition: transform 0.3s ease-in-out;
+}
 
-ul.checkboxes li input[type="checkbox"]:checked + label {
+ul.checkboxes li input[type=checkbox]:checked + label {
   border: 2px solid #296699;
   background-color: #74A4CC;
   color: #fff;
-  transition: all .2s; }
+  transition: all 0.2s;
+}
 
-ul.checkboxes li input[type="checkbox"] {
+ul.checkboxes li input[type=checkbox] {
   position: absolute;
-  opacity: 0; }
+  opacity: 0;
+}
 
-ul.checkboxes li input[type="checkbox"]:focus + label {
-  border: 2px solid #CC7874; }
+ul.checkboxes li input[type=checkbox]:focus + label {
+  border: 2px solid #CC7874;
+}
 
 .interest-left {
   text-align: center;
-  font-family: 'Aleo', serif;
+  font-family: "Aleo", serif;
   padding-left: 700px;
   padding-right: 700px;
   display: inline-block;
-  overflow: auto; }
+  overflow: auto;
+}
 
 .interest-right {
   text-align: center;
-  font-family: 'Aleo', serif;
+  font-family: "Aleo", serif;
   padding-left: 700px;
   padding-right: 700px;
-  display: inline-block; }
+  display: inline-block;
+}
 
-input[type="submit"] {
+input[type=submit] {
   border-radius: 25px;
   border: 2px solid #CC7874;
   font-style: normal;
@@ -134,17 +157,20 @@ input[type="submit"] {
   font-weight: 900;
   font-size: 20px;
   padding: 5px;
-  font-family: 'Aleo', serif;
+  font-family: "Aleo", serif;
   cursor: pointer;
-  text-align: center; }
+  text-align: center;
+}
 
 .button-center {
   margin: auto;
-  width: 70%; }
+  width: 70%;
+}
 
 .form-text {
   text-align: center;
-  font-family: 'Aleo', serif; }
+  font-family: "Aleo", serif;
+}
 
 .leftBox {
   position: absolute;
@@ -152,12 +178,14 @@ input[type="submit"] {
   width: 200px;
   border: 5px solid #FF876B;
   border-radius: 25px;
-  padding: 10px; }
+  padding: 10px;
+}
 
 .rightTopSection {
   position: absolute;
   right: 20px;
-  width: 500px; }
+  width: 500px;
+}
 
 .rightBox {
   position: absolute;
@@ -165,16 +193,56 @@ input[type="submit"] {
   width: 415px;
   border: 5px solid #FF876B;
   border-radius: 25px;
-  padding: 10px; }
+  padding: 10px;
+}
 
 .leftTopSection {
   position: absolute;
   width: 500px;
   right: 650px;
-  padding-right: 20px; }
+  padding-right: 20px;
+}
 
 img {
   width: 400px;
-  border-radius: 25px; }
+  border-radius: 25px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #FF876B;
+  color: #296699;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+}
+
+.footerButton {
+  border-radius: 25px;
+  border: 2px solid #CC7874;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  font-size: 14px;
+  padding: 5px;
+  font-family: "Aleo", serif;
+  cursor: pointer;
+  text-align: center;
+  height: 20px;
+  background-color: #296699;
+  color: #fffaf6;
+}
+
+.copyright {
+  color: #296699;
+  font-family: "Aleo", serif;
+  font-size: 11px;
+}
 
 /*# sourceMappingURL=styles.css.map */

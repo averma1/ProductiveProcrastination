@@ -74,8 +74,11 @@ def goToWorkPage():
         sessions = sessions+1
 
     sessions = sessions - 1
-    if sessions < 0:
-        return render_template('work.html', title='Work', values=[0, remainder, 0])
+    if sessions == 0:
+        if sessions < 0:
+            return render_template('setup.html', title='Setup')
+        else:
+            return render_template('work.html', title='Work', values=[0, remainder, 0])
     else:
         return render_template('work.html', title='Work', values=[1, 0, 1])
 

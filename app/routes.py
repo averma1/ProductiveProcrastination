@@ -112,10 +112,15 @@ breaks = []
 
 def loadBreaks():
     thing1 = Break("Music", "youtube", ["https://www.youtube.com/embed/1YAf8hFX0M0"])
+    breaks.append(thing1)
+    thing2 = Break("Music", "youtube", ["https://www.youtube.com/embed/DX5_o-mumvE"])
+    breaks.append(thing2)
+    break2 = Break("Music", "article", [
+        "https://www.npr.org/2020/02/21/807821340/the-lessons-to-be-learned-from-forcing-plants-to-play-music"])
+    breaks.append(break2)
+
     break1 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/bIqUT78mnvg"])
     breaks.append(break1)
-    break2 = Break("Cooking", "article", ["this is content"])
-    breaks.append(break2)
     break3 = Break("Cooking", "article", ["this is content"])
     breaks.append(break3)
     break4 = Break("Cooking", "article", ["this is content"])
@@ -124,9 +129,23 @@ def loadBreaks():
     breaks.append(break5)
     break6 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/-7i9dTJgsdI"])
     breaks.append(break6)
-    break7 = Break("Cooking", "combo", ["https://www.youtube.com/embed/NN-bLP2B8f4", "this is content"])
+    break7 = Break("Cooking", "combo", ["https://www.youtube.com/embed/NN-bLP2B8f4", "https://diyjoy.com/easy-snacks-recipes/"])
     breaks.append(break7)
-    breaks.append(thing1)
+    break8 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/1Gdl-A1DvpA"])
+    breaks.append(break8)
+
+    break9 = Break("Photography", "youtube", ["https://www.youtube.com/embed/ineZXLbL7s8"])
+    breaks.append(break9)
+    break10 = Break("Photography", "youtube", ["https://www.youtube.com/embed/PW8tr4j1ZWE"])
+    breaks.append(break10)
+    break11 = Break("Photography", "article", ["https://www.nationalgeographic.com/photography/photo-tips/digital-photography-tips/"])
+    breaks.append(break11)
+
+    break12 = Break("History", "article",
+                    ["https://www.nytimes.com/2020/04/27/world/europe/russia-historian-stalin-mass-graves.html?action=click&module=Top%20Stories&pgtype=Homepage"])
+    breaks.append(break12)
+    break13 = Break("History", "youtube", ["https://www.youtube.com/embed/BEG-ly9tQGk"])
+    breaks.append(break13)
 
 
 def chooseBreak():

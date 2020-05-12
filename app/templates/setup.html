@@ -6,12 +6,15 @@
 <h2 class="title">How do I get started?</h2>
 <p class="descriptions">Work means something different for everyone! Time to write an essay, organize the pantry, clean the bleeping house... setup repeated periods of work with periods of rest in between to help you recharge, and put your best foot forward.</p>
 <br><br>
- <form action="/goToWorkPage" name="go-account" class="form-text">
-     <label for="total_time">How much time do I have to work?</label><br>
-     <input type="text" id="total_time" name="total_time" value="8"><br>
-     <label for="often">How often do I want a break?</label><br>
-     <input type="text" id="often" name="often" value="50"><br><br><br>
-     <input type="submit" value="Let's Start This Thing Already" class="btn btn-info p-5 m-2">
- </form>
+
+<form action="/goToWorkPage" name="go-account" class="form-text">
+  <label for="hours">How many hours do I have to work?:</label>
+  <input type="number" id="hours" name="hours" min="1" max="24" value="0">
+
+    <label for="minutes">How many minutes do I have to work?:</label>
+  <input type="number" id="minutes" name="minutes" min="0" max="59" value="0">
+<br>
+    <input type="submit" value="Let's Start This Thing Already" class="btn btn-info p-5 m-2">
+</form>
 
 {% endblock %}

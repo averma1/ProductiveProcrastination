@@ -6,8 +6,8 @@ from datetime import datetime
 from werkzeug.urls import url_parse
 
 interests = []
-totalTime = 0
-often = 0
+sessions = 0
+remainder = 0
 
 
 @app.route('/')
@@ -56,15 +56,28 @@ def goToSetupPage():
 
 @app.route('/goToWorkPage', methods=['GET', 'POST'])
 def goToWorkPage():
-    global totalTime
-    global often
-    if 'total_time' in request.args:
-        totalTime = request.args.get('total_time')
-    if 'often' in request.args:
-        often = request.args.get('often')
-    print("THE TOTAL TIME: " + totalTime)
-    print("HOW OFTEN A BREAK: " + often)
-    return render_template('work.html', title='Work', values=[totalTime, often])
+    global sessions
+    global remainder
+    hours = 0
+    minutes = 0
+    if 'hours' in request.args:
+        hours = request.args.get('hours')
+    if 'minutes' in request.args:
+        minutes = request.args.get('minutes')
+        hours = int(hours)
+        minutes = int(minutes)
+        sessions = (((hours * 60) + minutes) / 80) * 1000
+        remainder = ((sessions % 1000)/1000)*80
+        remainder = int(remainder)
+        sessions = sessions / 1000
+        sessions = int(sessions)
+        sessions = sessions+1
+
+    sessions = sessions - 1
+    if sessions < 0:
+        return render_template('work.html', title='Work', values=[0, remainder, 0])
+    else:
+        return render_template('work.html', title='Work', values=[1, 0, 1])
 
 
 @app.route('/goToBreakPage', methods=['GET', 'POST'])

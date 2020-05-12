@@ -18,7 +18,7 @@
 
 <script>
 var seconds = 0;
-var minutes = 0;
+var minutes = {{values[1]}};
 var interval = setInterval(setTime, 1000);
 var hours = {{values[0]}};
 var minPlaceholder = "";
@@ -42,7 +42,7 @@ var secPlaceholder = "";
           seconds--;
       }
     }
-    else {
+    else if ({{values[2]}} == 1 ){
         $.post( "/goToBreakPage", {
                   canvas_data: JSON.stringify("hello")
     }, function(err, req, resp){
@@ -50,6 +50,15 @@ var secPlaceholder = "";
         });
         clearInterval(interval);
     }
+     else {
+        $.post( "/goToSetupPage", {
+                  canvas_data: JSON.stringify("hello")
+    }, function(err, req, resp){
+      window.location.href = "/goToSetupPage";
+      });
+        clearInterval(interval);
+    }
+
 
     if (minutes <10){
         minPlaceholder = "0";

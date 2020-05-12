@@ -161,7 +161,7 @@ input[type="submit"] {
 
 .rightBox {
   position: absolute;
-  right: 100px;
+  right: 30px;
   width: 415px;
   border: 5px solid #FF876B;
   border-radius: 25px;
@@ -170,6 +170,7 @@ input[type="submit"] {
 .leftTopSection {
   position: absolute;
   width: 500px;
+  right: 650px;
   padding-right: 20px; }
 
 img {

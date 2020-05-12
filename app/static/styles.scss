@@ -159,24 +159,10 @@ input[type="submit"]{
     font-family: 'Aleo', serif;
     cursor: pointer;
     text-align: center;
-    margin-left: 620px;
-    margin-right: 620px;
 }
-.bottom-submit{
-    border-radius: 25px;
-    border: 2px solid $soft-orange;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 900;
-    font-size: 20px;
-    padding: 5px;
-    font-family: 'Aleo', serif;
-    cursor: pointer;
-    text-align: center;
-    margin-left: 650px;
-    margin-right: 620px;
+.button-center{
+    margin: auto;
+    width: 70%;
 }
 
 .form-text{
@@ -187,7 +173,7 @@ input[type="submit"]{
 //Science Pg
 .leftBox {
     position: absolute;
-    left: 400px;
+    left: 100px;
     width: 200px;
     border: 5px solid $bright-orange;
     border-radius: 25px;
@@ -203,7 +189,7 @@ input[type="submit"]{
 
   .rightBox{
     position: absolute;
-    right: 200px;
+    right: 100px;
     width: 415px;
     border: 5px solid $bright-orange;
     border-radius: 25px;
@@ -213,7 +199,7 @@ input[type="submit"]{
   .leftTopSection{
     position: absolute;
     width: 500px;
-    padding-right: 25px;
+    padding-right: 20px;
   }
 
   img{

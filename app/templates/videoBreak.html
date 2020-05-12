@@ -31,6 +31,8 @@
 <script>
 var seconds = {{values[1]}};
 var minutes = {{values[0]}};
+
+
 var interval = setInterval(setTime, 1000);
 
   function setTime(){
@@ -46,6 +48,7 @@ var interval = setInterval(setTime, 1000);
           seconds--;
       }
     }
+
 
     document.getElementById("minutes").innerHTML = minutes;
     document.getElementById("seconds").innerHTML = seconds;

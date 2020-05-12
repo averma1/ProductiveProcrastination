@@ -16,3 +16,7 @@ app/__pycache__/models.cpython-37.pyc
 migrations/
 music.db
 .sass-cache/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

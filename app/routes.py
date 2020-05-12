@@ -74,29 +74,32 @@ def goToWorkPage():
         sessions = sessions+1
 
     sessions = sessions - 1
+    print("sessions: ", sessions)
+    if sessions < 0:
+        return render_template('setup.html', title='Setup')
     if sessions == 0:
-        if sessions < 0:
-            return render_template('setup.html', title='Setup')
-        else:
-            return render_template('work.html', title='Work', values=[0, remainder, 0])
+        return render_template('work.html', title='Work', values=[0, remainder, 0])
     else:
         return render_template('work.html', title='Work', values=[1, 0, 1])
 
 
 @app.route('/goToBreakPage', methods=['GET', 'POST'])
 def goToBreakPage():
-    loadBreaks()
-    currentbr = chooseBreak()
-    if currentbr.type == "youtube":
-        current = currentbr.content[0]
-        return render_template('videoBreak.html', title='Break', content=current, values=[19, 60])
-    elif currentbr.type == "combo":
-        cont1 = currentbr.content[0]
-        cont2 = currentbr.content[1]
-        return render_template('comboBreak.html', title='Break', content1=cont1, content2=cont2, values=[19, 60])
+    if sessions <= 0:
+        return render_template('setup.html', title='Setup')
     else:
-        current = currentbr.content[0]
-        return render_template('textBreak.html', title='Break', content=current, values=[19, 60])
+        loadBreaks()
+        currentbr = chooseBreak()
+        if currentbr.type == "youtube":
+            current = currentbr.content[0]
+            return render_template('videoBreak.html', title='Break', content=current, values=[19, 60])
+        elif currentbr.type == "combo":
+            cont1 = currentbr.content[0]
+            cont2 = currentbr.content[1]
+            return render_template('comboBreak.html', title='Break', content1=cont1, content2=cont2, values=[19, 60])
+        else:
+            current = currentbr.content[0]
+            return render_template('textBreak.html', title='Break', content=current, values=[19, 60])
 
 
 @app.route('/refreshBreakPage', methods=['GET', 'POST'])

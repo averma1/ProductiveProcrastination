@@ -189,7 +189,7 @@ img {
   padding-right: 30%; }
 
 footer {
-  text-align: center;
+  /* text-align: center;
   padding: 10px;
   background-color: #296699;
   color: #fffaf6;
@@ -199,7 +199,15 @@ footer {
   height: 50px;
   bottom: 0;
   left: 0;
-  position: absolute; }
+  position: absolute; */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#296699;
+  color: #fffaf6;
+  text-align: center;
+ }
 
 .footerButton {
   border-radius: 25px;
@@ -219,7 +227,7 @@ footer {
   color: #fffaf6; }
 
 .copyright {
-  color: #296699;
+  color: #fffaf6;
   font-family: 'Aleo', serif;
   font-size: 11px; }
 

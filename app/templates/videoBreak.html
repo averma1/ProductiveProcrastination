@@ -12,19 +12,25 @@
 <div class="title">
      <iframe width="560" height="315" src={{ content }} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+    <div class="button-breaks ">
+   <div style="display: flex;">
     <form action="/refreshBreakPage" name="go-break">
      <input type="submit" value="Give Me Something Else" class="btn btn-info p-5 m-2">
     <input type="text" id="min2" name="min2" value="8" hidden>
      <input type="text" id="sec2" name="sec2" value="50" hidden>
     </form>
 
-     <form action="/goToSetupPage" name="go-setup">
-         <input type="submit" value="Edit" class="btn btn-info p-5 m-2">
-     </form>
-
      <form action="/goToWorkPage" name="go-setup">
          <input type="submit" value="Go Back to Work" class="btn btn-info p-5 m-2">
      </form>
+
+       <form action="/goToSetupPage" name="go-setup">
+         <input type="submit" value="Edit Session" class="btn btn-info p-5 m-2">
+     </form>
+    </div>
+    </div>
+
+    <br><br><br>
 
 </div>
 

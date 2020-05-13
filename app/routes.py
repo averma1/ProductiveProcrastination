@@ -168,6 +168,9 @@ def loadBreaks():
 def chooseBreak():
     if len(interests) == 0:
         interests.append("Music")
+        interests.append("Cooking")
+        interests.append("History")
+        interests.append("Photography")
     if len(interests) > 1:
         interest = getRandNum(len(interests))
     else:

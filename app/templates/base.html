@@ -10,12 +10,10 @@
 {% endblock %}
 
 {% block navbar %}
-
 <nav class="nav">
-    <div class="nav__title">Productive Procrastination</div>
+        <a class="nav__title" href="{{ url_for('index') }}">Productive Procrastination</a>
     <ul class="nav__list">
-        <li class="nav__item">About Us</li>
-        <li class="nav__item" a href="{{ url_for('goToSciencePage') }}">Science Behind the Machine</li>
+        <a class="nav__item" href="{{ url_for('goToSciencePage') }}">Science Behind the Machine</a>
     </ul>
 </nav>
 <div style="height: 30px;"></div>

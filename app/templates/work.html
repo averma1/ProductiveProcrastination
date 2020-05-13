@@ -2,9 +2,10 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<h1>Your work session is in progress!</h1>
+<h1 class="title">Your work session is in progress!</h1>
 
-<h2>Time left in session:</h2>
+<h2 class="descriptions">Time left in session:</h2>
+<div class="title">
 <h1 id="demo"></h1>
 
  <form action="/goToSetupPage" name="go-setup">
@@ -15,7 +16,7 @@
  <form action="/goToBreakPage" name="go-break">
      <input type="submit" value="Skip to Break" class="btn btn-info p-5 m-2">
  </form>
-
+</div>
 <script>
 var seconds = 0;
 var minutes = {{values[1]}};

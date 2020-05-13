@@ -11,7 +11,10 @@
 
 {% block navbar %}
 <nav class="nav">
-        <a class="nav__title" href="{{ url_for('index') }}">Productive Procrastination</a>
+    <div class="nav__title">
+    <img src="static/ProProTrans.png" alt="Logo" width="60" height="50" style="vertical-align:middle">
+        <a href="{{ url_for('index') }}">Productive Procrastination</a>
+    </div>
     <ul class="nav__list">
         <a class="nav__item" href="{{ url_for('goToSciencePage') }}">Science Behind the Machine</a>
     </ul>

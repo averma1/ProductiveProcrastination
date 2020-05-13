@@ -38,7 +38,7 @@ body {
   background-color: #FF876B;
   color: #296699; }
   .nav__title {
-    margin: 0px 30px; }
+    margin: 5px 10px;}
   .nav__item {
     display: inline-block;
     margin: 0px 30px; }
@@ -190,7 +190,7 @@ input[type="submit"] {
   right: 650px;
   padding-right: 20px; }
 
-img {
+.imgScience {
   width: 400px;
   border-radius: 25px; }
 

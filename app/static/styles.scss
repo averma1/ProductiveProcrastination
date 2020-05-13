@@ -133,22 +133,22 @@ ul.checkboxes li input[type="checkbox"]:focus + label {
     border: 2px solid $soft-orange;
 }
 
-.interest-left{
-    text-align: center;
-    font-family: 'Aleo', serif;
-    padding-left: 700px;
-    padding-right: 700px;
-    display: inline-block;
-    overflow: auto;
-}
+// .interest-left{
+//     text-align: center;
+//     font-family: 'Aleo', serif;
+//     padding-left: 700px;
+//     padding-right: 700px;
+//     display: inline-block;
+//     overflow: auto;
+// }
 
-.interest-right{
-    text-align: center;
-    font-family: 'Aleo', serif;
-    padding-left: 700px;
-    padding-right: 700px;
-    display: inline-block;
-}
+// .interest-right{
+//     text-align: center;
+//     font-family: 'Aleo', serif;
+//     padding-left: 700px;
+//     padding-right: 700px;
+//     display: inline-block;
+// }
 //SUBMIT BUTTONS
 input[type="submit"]{
     border-radius: 25px;
@@ -248,4 +248,8 @@ input[type="submit"]{
     color: $dark-blue;
     font-family: 'Aleo', serif;
     font-size: 11px;
+}
+
+a{
+    text-decoration: none;
 }

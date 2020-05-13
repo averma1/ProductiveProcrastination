@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<h1 class="title">You've run through your entered time!</h1>
+<h2 class="descriptions">I hope you were productive! </h2>
+<h2 class="descriptions">Please feel free to stick around or go about the rest of your day.</h2>
+
+<div class="title">
+ <form action="/goToSetupPage" name="go-setup">
+     <input type="submit" value="Start A New Session" class="btn btn-info p-5 m-2">
+ </form>
+</div>
+
+
+{% endblock %}

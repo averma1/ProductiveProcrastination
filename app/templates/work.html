@@ -52,10 +52,10 @@ var secPlaceholder = "";
         clearInterval(interval);
     }
      else {
-        $.post( "/goToSetupPage", {
+        $.post( "/goToFinish", {
                   canvas_data: JSON.stringify("hello")
     }, function(err, req, resp){
-      window.location.href = "/goToSetupPage";
+      window.location.href = "/goToFinish";
       });
         clearInterval(interval);
     }

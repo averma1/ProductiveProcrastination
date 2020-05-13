@@ -76,7 +76,7 @@ def goToWorkPage():
     sessions = sessions - 1
     print("sessions: ", sessions)
     if sessions < 0:
-        return render_template('setup.html', title='Setup')
+        return render_template('finish.html', title='Finished')
     if sessions == 0:
         return render_template('work.html', title='Work', values=[0, remainder, 0])
     else:
@@ -86,7 +86,7 @@ def goToWorkPage():
 @app.route('/goToBreakPage', methods=['GET', 'POST'])
 def goToBreakPage():
     if sessions <= 0:
-        return render_template('setup.html', title='Setup')
+        return render_template('finish.html', title='Finished')
     else:
         loadBreaks()
         currentbr = chooseBreak()

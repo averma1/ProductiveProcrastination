@@ -177,7 +177,7 @@ input[type="submit"]{
 //Science Pg
 .leftBox {
     position: absolute;
-    left: 100px;
+    left: 400px;
     width: 200px;
     border: 5px solid $bright-orange;
     border-radius: 25px;
@@ -193,11 +193,11 @@ input[type="submit"]{
 
   .rightBox{
     position: absolute;
-    right: 30px;
+    right: 225px;
     width: 415px;
     border: 5px solid $bright-orange;
     border-radius: 25px;
-    padding: 10px;
+    padding: 5px;
   }
 
   .leftTopSection{
@@ -212,6 +212,13 @@ input[type="submit"]{
       border-radius: 25px;
   }
 
+  .descriptionsScience{
+    text-align: center;
+    font-family: 'Aleo', serif;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+//Footer
   footer {
     text-align: center;
     padding: 10px;

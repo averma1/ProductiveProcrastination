@@ -142,8 +142,6 @@ def loadBreaks():
 
     break1 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/bIqUT78mnvg"])
     breaks.append(break1)
-    break3 = Break("Cooking", "article", ["this is content", "Article title"])
-    breaks.append(break3)
     break5 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/CE3OutlMcfM"])
     breaks.append(break5)
     break6 = Break("Cooking", "youtube", ["https://www.youtube.com/embed/-7i9dTJgsdI"])
